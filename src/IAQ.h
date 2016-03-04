@@ -14,12 +14,16 @@
 #include "Sensor.h"
 
 
-//Constructor
+
 struct SensorSettings
 {
-	//Main Interface and mode settings
-	uint8_t I2CAddress;
+	/**
+	 *  Main Interface and mode settings
+	 */
+	uint8_t i2CAddress;
+	uint8_t sensorType;
 	uint8_t chipSelectPin; //Undefined in .cpp
+	
 	uint8_t sampleType;
 };
 
@@ -27,19 +31,34 @@ struct SensorSettings
 class IAQ : public Sensor
 {
 	public:
-		IAQ();
+	
+		IAQ( uint8_t passI2CAddress, uint8_t passSensorType);
 		~IAQ();
 
 		SensorSettings settings;
-	
-		void loop();
+		
+		void debug();
+		
+		/**
+		 *  Getters
+		 *
+		 *  @return to pass variables information
+		 */
+		uint16_t getCO2();
+		uint8_t getStatus();
+		int32_t getResistance();
+		uint16_t getTvoc();
+		uint8_t getSampleType();
 	
 	private:
-		
+	
+		/**
+		 *  Model Default Methods
+		 */
 		void readAllBytes( void );
 		void checkStatus( void );
-	
 };
+
 
 enum class SampleType { CONTINUOUS, PULSED };
 

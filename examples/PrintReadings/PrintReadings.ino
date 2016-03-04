@@ -1,18 +1,17 @@
 
 #include <IAQ.h>
 
-//Create an instance of the IAQ sensor
-IAQ sensor;
+#define IAQADDRESS 0x5A
+
+//Create an instance of the IAQ sensor (I2CAddress, SensorType)
+IAQ sensor(IAQADDRESS, 0);
 
 void setup()
 {
   Serial.begin(9600);
-  
-  //Call the class
-  sensor;
 }
 
 void loop()
 {
-  sensor.loop();
+  sensor.debug();
 }
