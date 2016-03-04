@@ -8,11 +8,9 @@ $ cd ~/Documents/Arduino/libraries
 $ git clone https://github.com/moa/IAQ.git
 ```
 
-#### Usage
+#### Arduino Usage
 
-```Arduino Usage
-
-
+```
 #include <IAQ.h>
 
 #define IAQ_ADDRESS 0x5A
@@ -39,7 +37,8 @@ Serial.println(sensor.getTvoc());
 Serial.println("");
 
 delay(2000);
-}```
+}
+```
 
 #### License
 

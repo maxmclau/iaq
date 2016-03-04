@@ -51,7 +51,7 @@ uint8_t IAQ::getStatus()
       return IAQ_STATUS_TYPE_NONE;
   }
 }
-
+  
 uint16_t IAQ::getCO2()
 {
   readAllBytes();
