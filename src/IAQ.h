@@ -11,26 +11,28 @@
 
 #include <Arduino.h>
 #include <Wire.h>
+//#include <Sensor.h>
 
 
-/**
- * Status Modes
- */
-enum {
-	IAQ_STATUS_TYPE_WARMING_UP,
-	IAQ_STATUS_TYPE_READY,
-	IAQ_STATUS_TYPE_BUSY,
-	IAQ_STATUS_TYPE_ERROR,
-	IAQ_STATUS_TYPE_NONE,
-	IAQ_SAMPLE_TYPE_CONTINUOUS,
-	IAQ_SAMPLE_TYPE_PULSED
-};
-
-
-class IAQ
+class IAQ : //Sensor
 {
 	public:
-
+	
+/*
+	enum {
+		STATUS_TYPE_WARMING_UP,
+		STATUS_TYPE_READY,
+		STATUS_TYPE_BUSY,
+		STATUS_TYPE_ERROR,
+		ISTATUS_TYPE_NONE,
+		SAMPLE_TYPE_CONTINUOUS,
+		SAMPLE_TYPE_PULSED
+	};
+/*
+	
+		/**
+		 *  Constructor
+		 */
 		IAQ(uint8_t i2CAddress, uint8_t sampleType);
 		~IAQ();
 	

@@ -3,8 +3,8 @@
 
 #define IAQ_ADDRESS 0x5A
 
-//Create an instance of the IAQ sensor (I2CAddress, SampleType)
-IAQ sensor(IAQ_ADDRESS, IAQ_SAMPLE_TYPE_CONTINUOUS);
+//Create an instance of the IAQ sensor
+IAQ sensor(IAQ_ADDRESS, SAMPLE_TYPE_CONTINUOUS);
 
 void setup()
 {
