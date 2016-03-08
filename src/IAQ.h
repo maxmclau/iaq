@@ -24,7 +24,7 @@ class IAQ : //Sensor
 		STATUS_TYPE_READY,
 		STATUS_TYPE_BUSY,
 		STATUS_TYPE_ERROR,
-		ISTATUS_TYPE_NONE,
+		STATUS_TYPE_NONE,
 		SAMPLE_TYPE_CONTINUOUS,
 		SAMPLE_TYPE_PULSED
 	};
@@ -38,8 +38,6 @@ class IAQ : //Sensor
 	
 		/**
 		 *  Getters
-		 *
-		 *  @return to pass variables information
 		 */
 		uint8_t getStatus();
 		uint16_t getCO2();

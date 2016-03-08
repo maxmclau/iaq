@@ -27,7 +27,7 @@ void IAQ::readAllBytes()
   
   _cO2 = (Wire.read()<< 8 | Wire.read());
   _status = Wire.read();
-	_resistance = (Wire.read()& 0x00)| (Wire.read()<<16)| (Wire.read()<<8| Wire.read());
+  _resistance = (Wire.read()& 0x00)| (Wire.read()<<16)| (Wire.read()<<8| Wire.read());
 	_tvoc = (Wire.read()<<8 | Wire.read());
 }
 
