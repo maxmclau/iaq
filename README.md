@@ -1,46 +1,26 @@
-# Indoor Air Quality (IAQ)
+# AVR
 
-...
+Seed for new avr-gcc projects
 
 #### Install
+
 ```Shell
-$ cd ~/Documents/Arduino/libraries
-$ git clone https://github.com/moa/IAQ.git
+$ git clone https://github.com/maxmclau/avr.git
+$ cd avr/
+$ make
 ```
 
-#### Arduino Usage
+#### Targets
 
-```
-#include <IAQ.h>
-
-#define IAQ_ADDRESS 0x5A
-
-//Create an instance of the IAQ sensor (I2CAddress, SampleType)
-IAQ sensor(IAQ_ADDRESS, SAMPLE_TYPE_CONTINUOUS);
-
-void setup()
-{
-Serial.begin(9600);
-}
-
-void loop()
-{
-
-Serial.print("STATUS: ");
-Serial.println(sensor.getStatus());
-Serial.print("CO2: ");
-Serial.println(sensor.getCO2());
-Serial.print("RESISTANCE: ");
-Serial.println(sensor.getResistance());
-Serial.print("TVOC: ");
-Serial.println(sensor.getTvoc());
-Serial.println("");
-
-delay(2000);
-}
-```
+| Target | Action |
+|:---|:---|
+| ```*``` | Build all targets |
+| ```stats``` | Print output of avr-size |
+| ```clean``` | Remove all compiled files and objects |
+| ```flash_programmer``` | Flash .hex file to AVR with avrdude and programmer flags |
+| ```flash_bootloader``` | Flash .hex file to AVR with avrdude and bootloader flags |
+| ```directories``` | Create associated directories if they do not exist |
 
 #### License
 
-**`Apache 2.0`**
-
+[**`MIT`**](LICENSE)
