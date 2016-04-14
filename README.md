@@ -1,12 +1,12 @@
-# AVR
+# IAQ
 
 Seed for new avr-gcc projects
 
 #### Install
 
 ```Shell
-$ git clone https://github.com/maxmclau/avr.git
-$ cd avr/
+$ git clone https://github.com/moa/iaq
+$ cd iaq/
 $ make
 ```
 
