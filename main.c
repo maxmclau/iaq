@@ -25,20 +25,9 @@ uint16_t tvoc = 0;
 
 void getVal()
 {
-  if(!i2c_start(IAQ_ADDR))
+  if(i2c_start(IAQ_READ) == 0) //0 returned indicates no error
 	{
-    
-    uart_puts("Error");
-    
-    i2c_stop();
-    
-
-	} else
-  {
-    
     uart_puts("Start ");
-    
-    i2c_start((IAQ_ADDR << 1) + 1);
     
     pred = ((uint16_t)i2c_read_ack())<<8;
     pred |= i2c_read_ack();
@@ -53,6 +42,13 @@ void getVal()
     tvoc |= i2c_read_nack();
     
     i2c_stop();
+	}
+  else
+  {
+    uart_puts("Error");
+    
+    i2c_stop();
+    
 	}
 }
 

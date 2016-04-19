@@ -30,7 +30,11 @@ uint8_t i2c_start(uint8_t address)
 	TWCR = (1<<TWINT) | (1<<TWEN);
 	// wait for end of transmission
 	while( !(TWCR & (1<<TWINT)) );
-
+  
+  
+  
+  // FAILS HERE:
+  
 	// check if the device has acknowledged the READ / WRITE mode
 	uint8_t twst = TW_STATUS & 0xF8;
 	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
